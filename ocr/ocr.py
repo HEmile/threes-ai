@@ -3,7 +3,7 @@ import numpy as np
 import os
 import re
 import glob
-from devices import CONFIGS
+from ocr.devices import CONFIGS
 
 DNAME = os.path.dirname(__file__)
 
@@ -55,7 +55,7 @@ class ExemplarMatcher:
         if len(possible) == 1:
             return possible.pop()
         elif len(possible) > 1:
-            print "Warning: multiple matches %s; guesser may not be accurate!" % possible
+            print("Warning: multiple matches %s; guesser may not be accurate!" % possible)
         return None
 
     def classify(self, imc):
@@ -69,10 +69,10 @@ class ExemplarMatcher:
 
         val = self.guess_classify(imc)
         if val is not None:
-            print "Unrecognized %s automatically classified as %s" % (self.tag, val)
+            print("Unrecognized %s automatically classified as %s" % (self.tag, val))
         else:
             imc.show()
-            val = raw_input("\aUnrecognized %s! Recognize it and type in the value: " % self.tag)
+            val = input("\aUnrecognized %s! Recognize it and type in the value: " % self.tag)
 
         nid = self.lastid.get(val, 0) + 1
         imc.save(os.path.join(self.exemplar_dir, '%s.%d.png' % (val, nid)))
@@ -109,8 +109,8 @@ class OCR:
         tileset = [to_ind(int(t)) for t in tileset.split(',')]
         out = np.zeros((4,4), dtype=int)
 
-        for r in xrange(4):
-            for c in xrange(4):
+        for r in range(4):
+            for c in range(4):
                 imc = extract_tile(self.cfg, im, r, c)
                 out[r,c] = to_ind(int(self.tile_matcher.classify(imc)))
 
@@ -119,12 +119,12 @@ class OCR:
 if __name__ == '__main__':
     import sys
     if len(sys.argv) < 3:
-        print "Usage:", sys.argv[0], "modelname", "files..."
+        print("Usage:", sys.argv[0], "modelname", "files...")
         exit()
 
     model = sys.argv[1]
     ocr = OCR(model)
     for fn in sys.argv[2:]:
-        print fn
-        print ocr.ocr(fn)
-        print
+        print(fn)
+        print(ocr.ocr(fn))
+        print()
