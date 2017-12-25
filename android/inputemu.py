@@ -46,14 +46,13 @@ def _write_events(shell, events):
 
     try:
         for dev in dat:
-        	bytez = [bytes([b]) for b in b''.join(dat[dev])]
-        	s = ''.join('\\x%02x' % ord(c) for c in bytez)
-        	shell.execute("echo -ne '%s' > %s" % (s, dev))
+            bytez = [bytes([b]) for b in b''.join(dat[dev])]
+            s = ''.join('\\x%02x' % ord(c) for c in bytez)
+            shell.execute("echo -ne '%s' > %s" % (s, dev))
     except ShellCommandException as e:
         print("Warning: inputemu: adb echo failed (%s), falling back to sendevent" % e)
         shell.use_sendevent = True
         _write_events(shell, events)
-
 
 def playback_gesture(shell, ident, gesture):
     gestfn = os.path.join('events', ident, gesture + '.txt')
