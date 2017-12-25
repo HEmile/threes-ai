@@ -15,9 +15,11 @@ def get_build_prop(shell):
         line = line.lstrip()
         if not line or line.startswith('#'):
             continue
-
-        k, v = line.split('=', 1)
-        out[k] = v
+        try:
+            k, v = line.split('=', 1)
+            out[k] = v
+        except ValueError:
+            pass
 
     return out
 
@@ -40,7 +42,8 @@ def _write_events(shell, events):
         dat[dev].append(struct.pack('<IIHHi', 0, 0, type, value, code))
 
     for dev in dat:
-        s = ''.join('\\x%02x' % ord(c) for c in ''.join(dat[dev]))
+        bytez = [bytes([b]) for b in b''.join(dat[dev])]
+        s = ''.join('\\x%02x' % ord(c) for c in bytez)
         shell.execute("echo -ne '%s' > %s" % (s, dev))
 
 def playback_gesture(shell, ident, gesture):
@@ -107,21 +110,21 @@ def record_gestures(shell, ident, gestlist):
 
     p = shell.popen('getevent -t', text=True, nonblocking=True)
 
-    print "Collecting device info..."
+    print("Collecting device info...")
     for line in readlines_timed(p.stdout, 0.2):
         pass
 
     skipdevs = set()
 
-    print "Collecting background events..."
+    print("Collecting background events...")
     for line in readlines_timed(p.stdout, 0.2):
         ts, dev, type, value, code = parse_getevent(line)
         if dev not in skipdevs:
-            print "Skipping device", dev
+            print("Skipping device", dev)
             skipdevs.add(dev)
 
     for gest in gestlist:
-        print "\aPlease do a %s gesture!" % gest
+        print("\aPlease do a %s gesture!" % gest)
 
         last = None
         start_ts = None
@@ -147,7 +150,7 @@ def record_gestures(shell, ident, gestlist):
             events.append((ts - start_ts, dev, type, value, code))
             last = time.time()
 
-        print "Captured!"
+        print("Captured!")
         with open(os.path.join(outdir, gest + '.txt'), 'w') as f:
             for ev in events:
                 f.write('%f %s %d %d %d\n' % ev)
@@ -171,7 +174,7 @@ def main(argv):
         record_gestures(shell, ident, args.gestures)
     else:
         for gest in args.gestures:
-            print "Playing back %s" % gest
+            print("Playing back %s" % gest)
             playback_gesture(shell, ident, gest)
             time.sleep(0.5)
 

@@ -364,7 +364,7 @@ class ADBShell:
                 warn("timed out waiting for prompt!")
 
         # remove restore-cursor command
-        prompt = prompt.replace('\x1b8', '')
+        prompt = prompt.replace(b'\x1b8', b'\x1b')
         m = re.match(br'^(\w+)@(\w+):(.*?) ([$#]) $', prompt)
         if m:
             self.user = m.group(1).decode()

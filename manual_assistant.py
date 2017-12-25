@@ -21,7 +21,7 @@ class ManualAssistant:
         self.last_move = None
 
     def _ask_tileset(self):
-        tileset = raw_input("Upcoming tile(s)? ")
+        tileset = input("Upcoming tile(s)? ")
         tileset = {'blue': '1', 'red': '2', 'white': '3+'}.get(tileset, tileset)
         if tileset in ('3+', '6+'):
             return tileset # will be fixed up
@@ -33,7 +33,7 @@ class ManualAssistant:
             return tileset
 
         maxval = board.max()
-        out = set(xrange(4, maxval-3))
+        out = set(range(4, maxval-3))
         if tileset == '3+':
             out |= {3}
         else:
@@ -72,13 +72,13 @@ class ManualAssistant:
 
     def _ask_board(self):
         if self.last_board is None:
-            print "Current board?"
+            print("Current board?")
         else:
-            print "Current board or difference from last board?"
+            print("Current board or difference from last board?")
 
         bits = []
         while 1:
-            line = re.split(r'[ \t,]', raw_input())
+            line = re.split(r'[ \t,]', input())
             bits += line
             if 1 <= len(bits) < 4:
                 return self._parse_delta(*bits)
@@ -94,14 +94,14 @@ class ManualAssistant:
                     board = self._ask_board()
                     break
                 except Exception as e:
-                    print "Didn't understand your input:", e
+                    print("Didn't understand your input:", e)
 
             while 1:
                 try:
                     tileset = self._ask_tileset()
                     break
                 except Exception as e:
-                    print "Didn't understand your input:", e
+                    print("Didn't understand your input:", e)
 
             tileset = self._fixup_tileset(tileset, board)
             yield board, tileset, False
@@ -109,8 +109,8 @@ class ManualAssistant:
             self.last_tiles = tileset
 
     def make_move(self, move):
-        print "*** Suggested move:", move
-        print
+        print("*** Suggested move:", move)
+        print()
         self.last_move = move
 
 def parse_args(argv):
@@ -124,7 +124,7 @@ def main(argv):
     from itertools import count
     args = parse_args(argv)
 
-    print 'Welcome to the Threes! assistant. See README.md for help on input formats.'
+    print('Welcome to the Threes! assistant. See README.md for help on input formats.')
     assistant = ManualAssistant()
     run_assistant(assistant.gen_board(), assistant.make_move, False)
 
