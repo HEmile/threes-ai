@@ -81,7 +81,7 @@ def _step_reconstruct(board, deck, newboard):
     if t <= 3:
         deck.update(t)
 
-def run_assistant(gen_board, make_move_func, from_start=True):
+def run_assistant(gen_board, make_move_func, ai_func=None, from_start=True):
     ''' Run the assistant.
     
     gen_board: A generator which returns (board, next_tile, skip_move) tuples.
@@ -90,8 +90,10 @@ def run_assistant(gen_board, make_move_func, from_start=True):
     from_start: Are we starting from the first move?
         If False, the deck will be estimated.
     '''
-
-    set_heurweights(2.5603675951186942, 48.075499534692185, 0.70005740882109824, 127.87624414823753, 253.7959629528122, 945.27171328243628, 674.42839422651991)
+    _find_bestmove = ai_func
+    if not ai_func:
+        set_heurweights(2.5603675951186942, 48.075499534692185, 0.70005740882109824, 127.87624414823753, 253.7959629528122, 945.27171328243628, 674.42839422651991)
+        _find_bestmove = find_best_move
     board = None
     deck = None
     moveno = 0
@@ -102,7 +104,7 @@ def run_assistant(gen_board, make_move_func, from_start=True):
         if board is not None and (board == newboard).all():
             print("Warning: previous move not made")
             time.sleep(0.3)
-            move = find_best_move(board, deck, tileset)
+            move = _find_bestmove(board, deck, tileset)
             if move < 0:
                 break
             make_move_func(movenames[move])
@@ -130,7 +132,7 @@ def run_assistant(gen_board, make_move_func, from_start=True):
         print("Next tile: %s (deck=1:%d, 2:%d, 3:%d)" % (tileset, deck[1], deck[2], deck[3]))
 
         if not skip_move:
-            move = find_best_move(board, deck, tileset)
+            move = _find_bestmove(board, deck, tileset)
             if move < 0:
                 break
             make_move_func(movenames[move])

@@ -112,7 +112,7 @@ def parse_args(argv):
     args = parser.parse_args(argv)
     return args
 
-def main(argv):
+def main(argv, ai_func=None):
     from itertools import count
     args = parse_args(argv)
 
@@ -136,9 +136,9 @@ def main(argv):
                 os.makedirs(outdir)
             except OSError:
                 pass
-            run_assistant(assistant.gen_board_disk(outdir, args.resume), assistant.make_move, args.from_start)
+            run_assistant(assistant.gen_board_disk(outdir, args.resume), assistant.make_move, ai_func, args.from_start)
         else:
-            run_assistant(assistant.gen_board_mem(), assistant.make_move, args.from_start)
+            run_assistant(assistant.gen_board_mem(), assistant.make_move, ai_func, args.from_start)
 
 if __name__ == '__main__':
     import sys
