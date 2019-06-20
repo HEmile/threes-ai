@@ -69,6 +69,18 @@ def do_move(m, move):
             changelines.append(lines[i])
     return changelines
 
+def to_nn_input(board, tileset):
+    # assume 16 inputs.
+    one_hot = 16
+    board = board.flatten()
+    sz_board = len(board)
+    in_nn = np.zeros(sz_board + one_hot)
+    for i in range(sz_board):
+        in_nn[i] = board[i]
+    for tile in tileset:
+        in_nn[sz_board + tile] = 1
+    return in_nn.flatten()
+
 class ThreesEnv(gym.Env):
     metadata = {'render.modes': ['ansi']}
 
@@ -77,6 +89,10 @@ class ThreesEnv(gym.Env):
         self.board = None
         self.tileset = None
         self.valid = []
+        # Observation space is 16 places on the board with any of the 16 tiles, ([16]*16)
+        # then for the next tile it's a sequence of binaries ([2]*16) as sometimes multiple options are possible
+        self.observation_space = spaces.MultiDiscrete([16]*16 + [2]*16)
+        self.action_space = spaces.Discrete(4)
 
     def _prepare_move(self):
         lineset = [get_lines(self.board, i) for i in range(4)]
@@ -100,18 +116,21 @@ class ThreesEnv(gym.Env):
         return valid, tileset
 
     def step(self, action):
-        prev_score = to_score(self.deck)
+        # Make sure the action is valid. If it's not, exit and return a reward of 0
+        if action not in self.valid:
+            return to_nn_input(self.board, self.tileset), 0.0, False, {}
+        prev_score = to_score(self.board).sum()
         # Apply the action
-        changelines = do_move(self.deck, action)
+        changelines = do_move(self.board, action)
         # Add a random number from the tileset to the right
         random.choice(changelines)[-1] = random.choice(self.tileset)
 
-        new_score = to_score(self.deck)
+        new_score = to_score(self.board).sum()
 
-        valid, self.tileset = self._prepare_move()
-        if not valid:
-            return (self.board, self.tileset), new_score - prev_score, True, {}
-        return (self.board, self.tileset), new_score - prev_score, False, {}
+        self.valid, self.tileset = self._prepare_move()
+        if not self.valid:
+            return to_nn_input(self.board, self.tileset), new_score - prev_score, True, {}
+        return to_nn_input(self.board, self.tileset), new_score - prev_score, False, {}
 
     def reset(self):
         # Returns the initial numbers that have to be distributed over the board
@@ -128,10 +147,10 @@ class ThreesEnv(gym.Env):
 
         _, self.tileset = self._prepare_move()
 
-        return self.board, self.tileset
+        return to_nn_input(self.board, self.tileset)
 
     def render(self, mode='human'):
-        return to_val(self.deck)
+        return to_val(self.board)
 
     def close(self):
         pass
