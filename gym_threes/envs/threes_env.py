@@ -145,12 +145,12 @@ class ThreesEnv(gym.Env):
         # What does this do? I think it empties the deck.
         self.deck = self.deck[len(pos):]
 
-        _, self.tileset = self._prepare_move()
+        self.valid, self.tileset = self._prepare_move()
 
         return to_nn_input(self.board, self.tileset)
 
     def render(self, mode='human'):
-        return to_val(self.board)
+        print(to_val(self.board))
 
     def close(self):
         pass
