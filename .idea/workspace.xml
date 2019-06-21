@@ -2,194 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="397e906e-36de-4a1e-bf84-932d684256c0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/stable.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/a2c/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/a2c/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/a2c/a2c.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/a2c/runner.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/a2c/utils.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/acer/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/acer/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/acer/acer.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/acer/buffer.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/acer/defaults.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/acer/policies.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/acer/runner.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/acktr/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/acktr/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/acktr/acktr.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/acktr/defaults.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/acktr/kfac.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/acktr/kfac_utils.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/acktr/utils.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/bench/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/bench/benchmarks.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/bench/monitor.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/bench/test_monitor.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/common/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/common/atari_wrappers.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/common/cg.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/common/cmd_util.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/common/console_util.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/common/dataset.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/common/distributions.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/common/input.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/common/math_util.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/common/misc_util.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/common/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/common/mpi_adam.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/common/mpi_adam_optimizer.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/common/mpi_fork.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/common/mpi_moments.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/common/mpi_running_mean_std.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/common/mpi_util.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/common/plot_util.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/common/policies.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/common/retro_wrappers.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/common/runners.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/common/running_mean_std.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/common/schedules.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/common/segment_tree.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/common/test_mpi_util.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/common/tests/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/common/tests/envs/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/common/tests/envs/fixed_sequence_env.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/common/tests/envs/identity_env.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/common/tests/envs/identity_env_test.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/common/tests/envs/mnist_env.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/common/tests/test_cartpole.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/common/tests/test_doc_examples.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/common/tests/test_env_after_learn.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/common/tests/test_fetchreach.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/common/tests/test_fixed_sequence.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/common/tests/test_identity.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/common/tests/test_mnist.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/common/tests/test_plot_util.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/common/tests/test_schedules.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/common/tests/test_segment_tree.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/common/tests/test_serialization.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/common/tests/test_tf_util.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/common/tests/test_with_mpi.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/common/tests/util.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/common/tf_util.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/common/tile_images.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/common/vec_env/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/common/vec_env/dummy_vec_env.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/common/vec_env/shmem_vec_env.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/common/vec_env/subproc_vec_env.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/common/vec_env/test_vec_env.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/common/vec_env/test_video_recorder.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/common/vec_env/util.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/common/vec_env/vec_env.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/common/vec_env/vec_frame_stack.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/common/vec_env/vec_monitor.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/common/vec_env/vec_normalize.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/common/vec_env/vec_remove_dict_obs.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/common/vec_env/vec_video_recorder.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/common/wrappers.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/ddpg/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/ddpg/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/ddpg/ddpg.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/ddpg/ddpg_learner.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/ddpg/memory.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/ddpg/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/ddpg/noise.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/ddpg/test_smoke.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/deepq/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/deepq/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/deepq/build_graph.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/deepq/deepq.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/deepq/defaults.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/deepq/experiments/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/deepq/experiments/custom_cartpole.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/deepq/experiments/enjoy_cartpole.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/deepq/experiments/enjoy_mountaincar.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/deepq/experiments/enjoy_pong.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/deepq/experiments/train_cartpole.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/deepq/experiments/train_mountaincar.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/deepq/experiments/train_pong.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/deepq/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/deepq/replay_buffer.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/deepq/utils.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/gail/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/gail/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/gail/adversary.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/gail/behavior_clone.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/gail/dataset/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/gail/dataset/mujoco_dset.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/gail/gail-eval.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/gail/mlp_policy.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/gail/result/HalfCheetah-normalized-deterministic-scores.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/gail/result/HalfCheetah-normalized-stochastic-scores.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/gail/result/HalfCheetah-unnormalized-deterministic-scores.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/gail/result/HalfCheetah-unnormalized-stochastic-scores.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/gail/result/Hopper-normalized-deterministic-scores.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/gail/result/Hopper-normalized-stochastic-scores.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/gail/result/Hopper-unnormalized-deterministic-scores.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/gail/result/Hopper-unnormalized-stochastic-scores.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/gail/result/Humanoid-normalized-deterministic-scores.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/gail/result/Humanoid-normalized-stochastic-scores.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/gail/result/Humanoid-unnormalized-deterministic-scores.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/gail/result/Humanoid-unnormalized-stochastic-scores.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/gail/result/HumanoidStandup-normalized-deterministic-scores.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/gail/result/HumanoidStandup-normalized-stochastic-scores.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/gail/result/HumanoidStandup-unnormalized-deterministic-scores.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/gail/result/HumanoidStandup-unnormalized-stochastic-scores.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/gail/result/Walker2d-normalized-deterministic-scores.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/gail/result/Walker2d-normalized-stochastic-scores.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/gail/result/Walker2d-unnormalized-deterministic-scores.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/gail/result/Walker2d-unnormalized-stochastic-scores.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/gail/result/gail-result.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/gail/result/halfcheetah-training.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/gail/result/hopper-training.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/gail/result/humanoid-training.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/gail/result/humanoidstandup-training.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/gail/result/walker2d-training.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/gail/run_mujoco.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/gail/statistics.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/gail/trpo_mpi.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/her/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/her/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/her/actor_critic.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/her/ddpg.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/her/experiment/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/her/experiment/config.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/her/experiment/data_generation/fetch_data_generation.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/her/experiment/play.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/her/experiment/plot.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/her/her.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/her/her_sampler.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/her/normalizer.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/her/replay_buffer.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/her/rollout.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/her/util.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/logger.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/ppo1/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/ppo1/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/ppo1/cnn_policy.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/ppo1/mlp_policy.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/ppo1/pposgd_simple.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/ppo1/run_atari.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/ppo1/run_humanoid.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/ppo1/run_mujoco.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/ppo1/run_robotics.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/ppo2/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/ppo2/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/ppo2/defaults.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/ppo2/microbatched_model.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/ppo2/model.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/ppo2/ppo2.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/ppo2/runner.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/ppo2/test_microbatches.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/results_plotter.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/run.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/trpo_mpi/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/trpo_mpi/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/trpo_mpi/defaults.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/trpo_mpi/trpo_mpi.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/deck_reconstruct.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gym_threes/envs/threes_env.py" beforeDir="false" afterPath="$PROJECT_DIR$/gym_threes/envs/threes_env.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -220,14 +33,26 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/stable.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
+            <state relative-caret-position="357">
               <caret line="24" column="56" lean-forward="true" selection-start-line="24" selection-start-column="56" selection-end-line="24" selection-end-column="56" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="90">
+                <caret line="6" column="68" selection-start-line="6" selection-start-column="68" selection-end-line="6" selection-end-column="68" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -291,6 +116,7 @@
         <option value="$PROJECT_DIR$/baselines/common/cmd_util.py" />
         <option value="$PROJECT_DIR$/gym_threes/envs/threes_env.py" />
         <option value="$PROJECT_DIR$/stable.py" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -312,17 +138,6 @@
             <path>
               <item name="threes-ai" type="b2602c69:ProjectViewProjectNode" />
               <item name="threes-ai" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="threes-ai" type="b2602c69:ProjectViewProjectNode" />
-              <item name="threes-ai" type="462c0819:PsiDirectoryNode" />
-              <item name="gym_threes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="threes-ai" type="b2602c69:ProjectViewProjectNode" />
-              <item name="threes-ai" type="462c0819:PsiDirectoryNode" />
-              <item name="gym_threes" type="462c0819:PsiDirectoryNode" />
-              <item name="envs" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="threes-ai" type="b2602c69:ProjectViewProjectNode" />
@@ -482,15 +297,16 @@
       <option name="presentableId" value="Default" />
       <updated>1561024347305</updated>
       <workItem from="1561024349994" duration="1724000" />
-      <workItem from="1561028343168" duration="15765000" />
+      <workItem from="1561028343168" duration="16646000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17489000" />
+    <option name="totallyTimeSpent" value="18370000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="887" y="-1200" width="1920" height="1200" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18317358" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -853,11 +669,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/stable.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
+        <state relative-caret-position="357">
           <caret line="24" column="56" lean-forward="true" selection-start-line="24" selection-start-column="56" selection-end-line="24" selection-end-column="56" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="90">
+            <caret line="6" column="68" selection-start-line="6" selection-start-column="68" selection-end-line="6" selection-end-column="68" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

@@ -1,55 +1,19 @@
-AI for the game Threes! by Sirvo LLC. You can get the game from here: http://asherv.com/threes/
+OpenAI Gym environment of Threes! by Sirvo LLC. This code is based on the [Threes! AI](https://github.com/nneonneo/threes-ai) of nneonneo. You can get the game from here: http://asherv.com/threes/
 
-Building this AI was the inspiration for my later [2048 AI](https://github.com/nneonneo/2048-ai), and some of the ideas from the 2048 AI have been backported to this AI as well.
-
-While I have not formally benchmarked the performance of this AI (yet), I know that it has successfully attained the 6144 tile multiple times, which is the highest tile available in the game. (Higher tiles are possible but unlikely, due to heavy random effects). The top score (at time of writing) is 775,524 points:
-
-![775524 points](http://imgur.com/IaTPZyo.png)
-
-This AI is a lot more experimental than its newer sibling 2048 AI because of the increased complexity of Threes! and because it has not received as much development time. Furthermore, Threes! is in general a bit of a moving target as the random tile generation algorithms are occasionally tweaked, necessitating changes in the AI.
-
-## Algorithm
-
-The algorithm for this AI is already essentially detailed in [this StackOverflow answer](http://stackoverflow.com/a/22498940/1204143) describing my 2048 AI. In essence, it implements a highly-optimized bruteforce search over the game tree (all possible moves, tile spawn values and tile values), using expectimax optimization to combine the results and find the "best" possible move.
-
-This Threes AI is actually more sophisticated than the 2048 AI in a number of ways: most notably, it accounts for the "deck" of upcoming tiles (the well-documented process by which the random incoming tiles are selected), and it properly handles all the possible tile spawn locations based on the moves that are made. In short: this Threes AI correctly (to the best of my knowledge) emulates every detail of the Threes game as part of the expectimax optimization process.
+It also includes code to interface with [Stable Baselines](https://github.com/hill-a/stable-baselines).
 
 ## Building
 
-The easiest way to get the AI running is to clone one of the `prebuilt/` branches corresponding to your OS and processor. These branches have pre-built binaries in the `bin/` directory.
+We first need to register the Threes! gym environment. To do this, execute 
 
-Note that the "default" Python on Windows is 32-bit, while the "default" Python on OS X and Linux is 64-bit. 32-bit builds are tagged `i386` while 64-bit builds are tagged `x86_64`.
+    python setup.py install
 
-If you want to build it yourself from source (e.g. if you're making changes), follow the directions below.
-
-### Unix/Linux/OS X
-
-Execute
-
-    ./configure
-    make
-
-in a terminal. Any relatively recent C++ compiler should be able to build the output.
-
-Note that you don't do `make install`; this program is meant to be run from this directory.
-
-### Windows
-
-You have a few options, depending on what you have installed.
-
-- Pure Cygwin: follow the Unix/Linux/OS X instructions above. The resulting DLL can *only* be used with Cygwin programs, so
-to run the browser control version, you must use the Cygwin Python (not the python.org Python). For step-by-step instructions, courtesy Tamas Szell (@matukaa), see [this document](https://github.com/nneonneo/2048-ai/wiki/CygwinStepByStep.pdf).
-- Cygwin with MinGW: run
-
-        CXX=x86_64-w64-mingw32-g++ CXXFLAGS='-static-libstdc++ -static-libgcc -D_WINDLL -D_GNU_SOURCE=1' ./configure ; make
-
-    in a MinGW or Cygwin shell to build. The resultant DLL can be used with non-Cygwin programs.
-- Visual Studio: open a Visual Studio command prompt, `cd` to the threes-ai directory, and run `make-msvc.bat`.
+Then run stable.py to train a model on this problem. 
 
 ## Running
 ### Python prerequisites
 
-You'll need Python 2.7, NumPy and PIL to run the Python programs.
+You will need Python 3.6, NumPy, Tensorflow, Openai Gym and Stable Baselines. I would recommend installing a virtual Anaconda environment 
 
 ### Running the command-line version
 
