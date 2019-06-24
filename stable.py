@@ -41,7 +41,7 @@ def callback(_locals, _globals):
 env = Monitor(gym.make('gym_threes:threes-v0'), log_dir, allow_early_resets=True)
 env = DummyVecEnv([lambda: env])
 
-model = A2C(MlpPolicy, env, verbose=1, tensorboard_log="./logs")
+model = ACKTR(MlpPolicy, env, verbose=1, tensorboard_log="./logs")
 model.learn(total_timesteps=100000, callback=callback)
 
 obs = env.reset()

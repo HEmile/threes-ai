@@ -118,6 +118,9 @@ class ThreesEnv(gym.Env):
     def step(self, action):
         # Make sure the action is valid. If it's not, exit and return a reward of 0
         if action not in self.valid:
+            print(action, self.valid, self.board, self.tileset)
+            if not self.valid:
+                return to_nn_input(self.board, self.tileset), 0.0, True, {}
             return to_nn_input(self.board, self.tileset), 0.0, False, {}
         prev_score = to_score(self.board).sum()
         # Apply the action
