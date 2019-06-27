@@ -93,6 +93,7 @@ class ThreesEnv(gym.Env):
         # then for the next tile it's a sequence of binaries ([2]*16) as sometimes multiple options are possible
         self.observation_space = spaces.MultiDiscrete([16]*16 + [2]*16)
         self.action_space = spaces.Discrete(4)
+        self.not_valid_count = 0
 
     def _prepare_move(self):
         lineset = [get_lines(self.board, i) for i in range(4)]
@@ -116,12 +117,16 @@ class ThreesEnv(gym.Env):
         return valid, tileset
 
     def step(self, action):
-        # Make sure the action is valid. If it's not, exit and return a reward of 0
+        # Make sure the action is valid. If it's not, exit and return a small negative reward
         if action not in self.valid:
-            print(action, self.valid, self.board, self.tileset)
+            self.not_valid_count += 1
             if not self.valid:
-                return to_nn_input(self.board, self.tileset), 0.0, True, {}
-            return to_nn_input(self.board, self.tileset), 0.0, False, {}
+                print("No valid moves but the environment has not reset!", self.board, self.tileset)
+                return to_nn_input(self.board, self.tileset), -1.0, True, {}
+            if self.not_valid_count > 30:
+                print("The algorithm has been unable to choose a valid action for more than 30 steps", action, self.valid, self.board, self.tileset)
+            return to_nn_input(self.board, self.tileset), -1.0, False, {}
+        self.not_valid_count = 0
         prev_score = to_score(self.board).sum()
         # Apply the action
         changelines = do_move(self.board, action)

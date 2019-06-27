@@ -13,3 +13,9 @@ config.h
 config.log
 config.status
 Makefile
+logs/best_model.pkl
+logs/monitor.csv
+*.out
+logs/
+*.DS_Store
+*.egg
